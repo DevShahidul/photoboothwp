@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Photo booth
+ * Template Name: Photo booth layout
  * Template Post Type: post, page, product
  */
   

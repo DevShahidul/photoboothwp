@@ -10,11 +10,4 @@
 ?>
 
 
-		<?php
-		the_content();
-
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'photoboth' ),
-			'after'  => '</div>',
-		) );
-		?>
+		<?php echo the_field('default_template_content'); ?>

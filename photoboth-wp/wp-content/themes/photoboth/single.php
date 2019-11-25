@@ -10,7 +10,8 @@
 get_header();
 ?>
 
-	<div class="wrapper">
+<div class="inner-content">
+  <div class="wrapper">
 
 		<?php
 		while ( have_posts() ) :
@@ -28,7 +29,8 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 	</div><!-- .wrapper -->
+</div><!-- .inner-content -->
 
 <?php
-get_sidebar();
+//get_sidebar();
 get_footer();

@@ -1465,13 +1465,27 @@ a.play-btn:hover  i{
 .text-info-bootom i {    border-bottom: 1px #c5c5c5 solid; }
 .list-check  {
 	margin: 10px 0;
+	display: block;
 }
-.list-2.list-check label {
+.list-2.list-check > label, 
+.list-2.list-check > span {
 	width: 50%;
+	margin: 0;
 }
-.list-check label {
+.list-check > label,
+.list-check > span {
     float: left;
     width: 30%;
+    font-weight: 300;
+	margin: 0;
+}
+.list-check > span:before{
+	font-size: 0;
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+.list-check > span label{
     font-weight: 300;
 }
 .other-add {
@@ -1635,4 +1649,39 @@ a.play-btn:hover  i{
 }
 .group-list a.media:first-child{
 	margin: 15px auto;
+}
+
+.photo-booth-style-page .inner-content h3{
+	display: inline;
+	margin: 0;
+}
+.photo-booth-style-page .inner-content ul{
+	padding-top: 10px;
+}
+
+.booth-image .thumbnail p {
+	text-align: center;
+}
+.booth-image .thumbnail p a{
+	display: inline-block;
+	font-size: 20px;
+}
+.booth-image .thumbnail p a:after{
+	content: "\f178";
+	color: #e23838;
+    font-size: 14px;
+    margin: 0 0 0 3px;
+    border-radius: 0;
+    width: auto;
+    height: auto;
+    position: inherit;
+    background: none;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    transition: all ease 0.4s;
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+}
+.booth-image .thumbnail p a:hover:after{
+	margin-left: 10px;
 }
