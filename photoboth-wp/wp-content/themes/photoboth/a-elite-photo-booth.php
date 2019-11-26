@@ -118,7 +118,7 @@ get_header(); ?>
 
 <!-- Different Style of Photo Booths -->
 <?php  include('template/different-style-photo-booths.php'); ?>
-
+</main>
 <div class="clearfix"></div>
 
 <!-- //Footer -->
