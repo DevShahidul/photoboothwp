@@ -1009,7 +1009,7 @@ h3.page-title {
 .contact-page-detail a:hover {
 	color: #e23838;
 }
-.enquiry-form input[type="text"], .enquiry-form input[type="email"], .enquiry-form select, .enquiry-form input[type="number"] {
+.enquiry-form input[type="text"], .enquiry-form input[type="email"], .enquiry-form select, .enquiry-form input[type="number"],.widget input[type="search"] {
 	margin-bottom: 20px;
 	height: 40px;
 	width: 100%;
@@ -1026,7 +1026,7 @@ h3.page-title {
 	margin-bottom: 20px;
 	font-size: 16px;
 }
-.enquiry-form input[type="submit"] {
+.enquiry-form input[type="submit"], .widget  input[type="submit"] {
 	background: #034382;
 	color: #FFFFFF;
 	height: 55px;
@@ -1035,7 +1035,10 @@ h3.page-title {
 	border-radius: 3px;
 	font-size: 16px;
 }
-.enquiry-form input[type="submit"]:hover {
+.widget  input[type="submit"]{
+	height: 40px;
+}
+.enquiry-form input[type="submit"]:hover, .widget  input[type="submit"]:hover {
 	background: #e23838;
 	color: #FFFFFF;
 }
@@ -1684,4 +1687,23 @@ a.play-btn:hover  i{
 }
 .booth-image .thumbnail p a:hover:after{
 	margin-left: 10px;
+}
+
+.widget-title,
+.page-title{
+	color: #e23838;
+}
+
+.widget input[type="search"] {
+	padding: 6px 12px;
+	line-height: 1.42857143;
+	color: #555;
+	font-weight: normal;
+	margin-bottom: 0;
+	border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }

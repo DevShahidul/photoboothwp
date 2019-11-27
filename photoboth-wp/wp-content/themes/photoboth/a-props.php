@@ -64,14 +64,16 @@ get_header(); ?>
             <ul>
               <?php
                 $i=0;
-                $active = ($i < 1 ? '' : '');
-                // check if the repeater field has rows of data
+                $c=0;
                 if( have_rows('props_page_slider_title') ):
 
                   // loop through the rows of data
                   while ( have_rows('props_page_slider_title') ) : the_row();
+                  $c++;
+
+                  $class = ($c == 1) ? 'active' : '';
               ?>
-                <li data-index ="<?php echo $i; ?>" class ="<?php echo $active; ?>"> <a> <?php echo the_sub_field('props_page_slide_item_title_text'); ?> </a>  <i class="fa fa-caret-right"></i></li>
+                <li data-index ="<?php echo $i; ?>" class ="<?php echo $class; ?>"> <a> <?php echo the_sub_field('props_page_slide_item_title_text'); ?> </a>  <i class="fa fa-caret-right"></i></li>
               <?php $i++; endwhile; endif; ?>
             </ul>
         </div>
@@ -84,3 +86,41 @@ get_header(); ?>
 
 <!-- //Footer -->
 <?php get_footer(); ?>
+
+<script>
+  (function($){
+
+
+    var $sync1 = $("#props");
+
+    $('#propsThumb ul li').click( function() {
+        $('#propsThumb ul li').removeClass('active');
+        let ele =$(this);
+        ele.addClass('active');
+        let index  =ele.data('index');
+
+        $sync1.trigger('to.owl.carousel', parseInt(index));
+    })
+  
+
+    $sync1.on('changed.owl.carousel', function(event) {
+        let index = event.item.index;
+        $('#propsThumb ul li').each( function(e) {
+            let eleIndex = $(this).data('index');
+     
+            if( index  === +eleIndex) {
+                $('#propsThumb ul li').removeClass('active');
+                $(this).addClass('active');
+            }
+        })
+    });
+
+    $sync1
+    .owlCarousel({
+        items: 1,
+        margin: 10,
+        nav: false,
+        dots: true,
+    });
+  })(jQuery)
+</script>
