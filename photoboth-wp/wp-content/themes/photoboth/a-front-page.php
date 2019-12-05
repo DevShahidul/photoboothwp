@@ -37,9 +37,13 @@ get_header(); ?>
 
           // loop through the rows of data
             while ( have_rows('home_banner_footer') ) : the_row();
+            $link = get_sub_field('home_banner_footer_link');
+            $linkUrl = !empty($link) ? $link['url'] : '';
+            $target = get_sub_field('targeted_id');
+            $targetId = !empty($target) ? $target : '';
       ?>
         <div class="col-sm-6 <?php echo the_sub_field('banner_footer_border_position'); ?>">
-          <a data-id="<?php echo the_sub_field('targeted_id'); ?>"> 
+          <a href="<?php echo $linkUrl; ?>" data-id="<?php echo $targetId; ?>"> 
             <i class="fa fa-<?php echo the_sub_field('banner_footer_icon_name'); ?>"></i>
             <?php echo the_sub_field('banner_footer_title'); ?>
             <span><?php echo the_sub_field('banner_footer_text'); ?></span>

@@ -33,31 +33,36 @@ get_header(); ?>
       <h2><?php the_title(); ?></h2>
     </div>
     
-    <div class="inner-video-section">
-      <img src="<?php echo $videoThumb['url']; ?>" alt="<?php echo $videoThumb['alt']; ?>" class="img-thumbnail">               
-      <a class="play-btn" href="<?php echo the_field('elite_photo_booth_page_after_hero_video_link'); ?>" data-fancybox><i class="fa fa-play-circle"></i></a>        
-    </div> 
-    
-    <?php echo the_field('elite_photo_booth_page_after_hero_content'); ?>
-  <br>
-  <?php
-              // check if the repeater field has rows of data
-    if( have_rows('elite_photo_booth_page_after_hero_buttons') ):
+    <div class="row">
+      <div class="inner-video-section col-sm-6">
+        <img src="<?php echo $videoThumb['url']; ?>" alt="<?php echo $videoThumb['alt']; ?>" class="img-thumbnail">               
+        <a class="play-btn" href="<?php echo the_field('elite_photo_booth_page_after_hero_video_link'); ?>" data-fancybox><i class="fa fa-play-circle"></i></a>        
+      </div> 
+      <div class="col-sm-6">
+        <?php echo the_field('elite_photo_booth_page_after_hero_content'); ?>
 
-      // loop through the rows of data
-        while ( have_rows('elite_photo_booth_page_after_hero_buttons') ) : the_row();
+        <br>
+        <?php
+                    // check if the repeater field has rows of data
+          if( have_rows('elite_photo_booth_page_after_hero_buttons') ):
 
-      $contentButton = get_sub_field('elite_photo_booth_page_after_hero_button');
-      $buttonId = get_sub_field('elite_photo_booth_page_after_hero_button_id');
-  ?>
+            // loop through the rows of data
+              while ( have_rows('elite_photo_booth_page_after_hero_buttons') ) : the_row();
 
-  <?php if(!empty($buttonId)) : ?>
-    <div><a class="btn btn-red" id ="<?php echo $buttonId; ?>"><?php echo $contentButton['title']; ?></a></div>
-    <?php else : ?>
-      <div><a class="btn btn-red" href="<?php echo $contentButton['url']; ?>"><?php echo $contentButton['title']; ?></a></div>
-  <?php endif; ?>
+            $contentButton = get_sub_field('elite_photo_booth_page_after_hero_button');
+            $buttonId = get_sub_field('elite_photo_booth_page_after_hero_button_id');
+        ?>
 
-  <?php endwhile; endif; ?>
+        <?php if(!empty($buttonId)) : ?>
+          <div><a class="btn btn-red" id ="<?php echo $buttonId; ?>"><?php echo $contentButton['title']; ?></a></div>
+          <?php else : ?>
+            <div><a class="btn btn-red" href="<?php echo $contentButton['url']; ?>"><?php echo $contentButton['title']; ?></a></div>
+        <?php endif; ?>
+
+        <?php endwhile; endif; ?>
+      </div>
+    </div>
+  
   </div>
   <div class="clear"></div>
 </div>
@@ -96,7 +101,7 @@ get_header(); ?>
           // loop through the rows of data
             while ( have_rows('customize_your_photo_booth_media') ) : the_row();
       ?>
-
+        
         <a class="media">
           <div class="media-left">
             <i class="fa fa-<?php echo the_sub_field('customize_your_photo_media_icon_name'); ?>"></i>
@@ -109,7 +114,10 @@ get_header(); ?>
       <?php endwhile; endif; ?>
 </div>
 </div>
-  <a class="btn"><?php echo the_field('customize_your_photo_booth_bottom_button'); ?></a>  
+<?php 
+  $link = get_field('customize_your_photo_booth_bottom_button');
+?>
+  <a href="<?php echo $link['url']; ?>" class="btn"><?php echo $link['title']; ?></a>  
 </div>
 
 

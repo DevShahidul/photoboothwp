@@ -1707,3 +1707,12 @@ a.play-btn:hover  i{
     -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
+
+.no-banner{
+	margin-top: 79px;
+}
+
+.post-navigation{
+	width: 100%;
+	margin: 3% 0 0;
+}

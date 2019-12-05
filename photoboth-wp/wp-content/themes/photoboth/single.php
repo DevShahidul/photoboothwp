@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-<div class="inner-content">
+<div class="inner-content single-post-page no-banner">
   <div class="wrapper">
 
 		<?php
@@ -18,7 +18,7 @@ get_header();
 			the_post();
 
 			get_template_part( 'template-parts/content', get_post_type() );
-
+	
 			the_post_navigation();
 
 			// If comments are open or we have at least one comment, load up the comment template.
@@ -28,6 +28,8 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
+
+		<div class="clearfix"></div>
 	</div><!-- .wrapper -->
 </div><!-- .inner-content -->
 

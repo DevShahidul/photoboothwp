@@ -49,3 +49,5 @@
 		?>
 	</div><!-- .page-content -->
 </section><!-- .no-results -->
+
+<div class="clearfix"></div>

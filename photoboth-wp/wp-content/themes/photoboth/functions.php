@@ -224,3 +224,5 @@ function cc_mime_types($mimes) {
 add_filter('upload_mimes', 'cc_mime_types');
 
 
+// Hide acf from dashboard menu
+//add_filter('acf/settings/show_admin', '__return_false');

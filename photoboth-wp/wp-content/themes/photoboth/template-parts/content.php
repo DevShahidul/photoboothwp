@@ -51,5 +51,8 @@
 			'after'  => '</div>',
 		) );
 		?>
+
+		<div class="clearfix"></div>
 	</div><!-- .entry-content -->
 </article><!-- #post-<?php the_ID(); ?> -->
+<div class="clearfix"></div>
