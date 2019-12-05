@@ -541,3 +541,10 @@ a.play-btn i {
 }
 
 
+@media screen and (max-width: 767px){
+	.navbar-collapse.collapse{
+		display: block !important;
+	}
+}
+
+
